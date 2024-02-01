@@ -1735,12 +1735,8 @@
   &:nth-child(1) {
     .item-benefits__img {
       img {
-        @media (min-width:$mobileSmall){
           object-fit: contain !important;
-        }
-        @media (max-width:$mobileSmall){
-          object-position: left; 
-        }
+          aspect-ratio: 700/385 !important;
       }
     }
   }

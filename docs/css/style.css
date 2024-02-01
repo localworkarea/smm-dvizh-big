@@ -1610,6 +1610,12 @@ body::after {
   gap: 1.25rem;
 }
 
+.item-benefits:nth-child(1) .item-benefits__img img {
+  -o-object-fit: contain !important;
+     object-fit: contain !important;
+  aspect-ratio: 700/385 !important;
+}
+
 .item-benefits__title {
   font-weight: 700;
   font-size: 1.875rem;
@@ -3713,11 +3719,6 @@ textarea {
     max-width: 18.75rem;
   }
 
-  .item-benefits:nth-child(1) .item-benefits__img img {
-    -o-object-fit: contain !important;
-       object-fit: contain !important;
-  }
-
   .form__item--check {
     margin-left: 1.875rem;
   }
@@ -4963,11 +4964,6 @@ textarea {
 
   .result-item__title {
     font-size: 1.5rem;
-  }
-
-  .item-benefits:nth-child(1) .item-benefits__img img {
-    -o-object-position: left;
-       object-position: left;
   }
 
   .item-benefits__img img {
