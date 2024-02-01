@@ -117,9 +117,31 @@
 		}
 }
 
-.mark-txt {
-  border-radius: toRem(6) toRem(6) toRem(6) toRem(0);
-  padding: 0 toRem(3) toRem(3) toRem(3);
-  line-height: 1;
-  background: $yellow;
-}
+// .mark-txt {
+//   border-radius: toRem(6) toRem(6) toRem(6) toRem(0);
+//   padding: 0 toRem(3) toRem(3) toRem(3);
+//   line-height: 1;
+//   background: $yellow;
+// }
+
+.split-text {
+  position: relative;
+  z-index: 2;
+  .line {
+    display: inline-block !important;
+    width: auto !important;
+    position: relative;
+    &::before {
+      content:'';
+      position: absolute;
+      width: calc(100% + 15px);
+      height: 110%;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -44%);
+      border-radius: toRem(10);
+      background-color: $yellow;
+    }
+  }
+} 

@@ -393,11 +393,30 @@ body::after {
   color: #FFF;
 }
 
-.mark-txt {
-  border-radius: 0.375rem 0.375rem 0.375rem 0rem;
-  padding: 0 0.1875rem 0.1875rem 0.1875rem;
-  line-height: 1;
-  background: #FFF95D;
+.split-text {
+  position: relative;
+  z-index: 2;
+}
+
+.split-text .line {
+  display: inline-block !important;
+  width: auto !important;
+  position: relative;
+}
+
+.split-text .line::before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 15px);
+  height: 110%;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -44%);
+      -ms-transform: translate(-50%, -44%);
+          transform: translate(-50%, -44%);
+  border-radius: 0.625rem;
+  background-color: #FFF95D;
 }
 
 .header {
@@ -542,6 +561,10 @@ body::after {
 .hero__txt {
   font-weight: 400;
   line-height: normal;
+}
+
+.hero__txt.txt-subtitle {
+  font-weight: 700;
 }
 
 .hero__txt:not(:last-child) {
@@ -4137,6 +4160,10 @@ textarea {
     margin-bottom: 2.3125rem;
   }
 
+  .hero__txt.txt-subtitle {
+    font-size: 1.625rem;
+  }
+
   .card-hero {
     max-width: 15.3125rem;
   }
@@ -4432,6 +4459,10 @@ textarea {
 
   .hero__sub-title {
     margin-bottom: 1.5rem;
+  }
+
+  .hero__txt.txt-subtitle {
+    font-size: 1.375rem;
   }
 
   .hero__footer {
@@ -5104,6 +5135,18 @@ textarea {
 @supports not (margin-bottom: clamp( 1.5rem , 0.8709677419rem  +  2.0967741935vw , 2.3125rem )) {
     .hero__sub-title {
       margin-bottom: calc(1.5rem + 0.8125 * (100vw - 30rem) / 38.75);
+    }
+}
+
+@supports (font-size: clamp( 1.375rem , 1.1814516129rem  +  0.6451612903vw , 1.625rem )) {
+    .hero__txt.txt-subtitle {
+      font-size: clamp( 1.375rem , 1.1814516129rem  +  0.6451612903vw , 1.625rem );
+    }
+}
+
+@supports not (font-size: clamp( 1.375rem , 1.1814516129rem  +  0.6451612903vw , 1.625rem )) {
+    .hero__txt.txt-subtitle {
+      font-size: calc(1.375rem + 0.25 * (100vw - 30rem) / 38.75);
     }
 }
 

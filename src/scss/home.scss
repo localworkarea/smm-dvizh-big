@@ -58,6 +58,10 @@
   &__txt {
     font-weight: 400;
     line-height: normal;
+    &.txt-subtitle {
+      font-weight: 700;
+      @include adaptiveValue("font-size", 26, 22,0,$containerWidth,480);
+    }
     &:not(:last-child) {
       margin-bottom: toRem(16);
     }

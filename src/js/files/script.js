@@ -164,3 +164,15 @@ if (inputPhone) {
   inputPhone.addEventListener('change', handleChange);
   inputPhone.addEventListener('keyup', handleChange);
 }
+
+
+
+const splitTextElements = document.querySelectorAll('.split-text');
+
+if (splitTextElements.length > 0) {
+  const splitText = new SplitType('.split-text', { types: 'lines' });
+
+  window.addEventListener("resize", function() {
+    splitText.split();
+  });
+}
