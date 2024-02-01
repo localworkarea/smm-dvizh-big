@@ -1,0 +1,46 @@
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img src="@img/icon/close.svg" alt="close icon">
+			</button>
+			<h2 class="form__title title-main">
+				Забронювати місце
+			</h2>
+			<form data-dev action="#" method="POST">
+				<div class="form__body">
+					<div class="form__item">
+						<input type="text" name="name" data-error="Заповни поле" data-required placeholder="Ім'я та прізвище" class="form__input input">
+					</div>
+
+					<div class="form__items">
+						<div class="form__item">
+							<input type="email" name="email" data-error="Заповни поле" data-required="email" placeholder="E-mail" class="form__input input">
+						</div>
+						<div class="form__item">
+							<input id="phone" type="tel" name="tel" value="" data-error="Заповни поле"  data-required class="form__input input tel">
+							<p id="output"></p>
+						</div>
+					</div>
+					
+					<div class="form__item">
+						<input type="text" name="nick-tg" placeholder="Нік у Telegram" class="form__input input">
+					</div>
+
+					<div class="form__item form__item--check">
+						<input id="formCheckBox" type="checkbox" checked name="agree" class="form__check-box">
+						<label for="formCheckBox">Погоджуюсь, щоб зі мною зв'язався менеджер SMM-двіжу</label>
+					</div>
+					
+					<div class="form__btn-action btn-action">
+						<button type="submit" class="btn-action__btn btn btn_02">
+							<span>Передзапис</span>
+						</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
