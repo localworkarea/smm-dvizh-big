@@ -2037,26 +2037,6 @@ textarea {
     &:not(:last-child) {
       margin-bottom: toRem(50);
     }
-    @media (min-width:em(750.98)){
-      &::before {
-        content:'';
-        position: absolute;
-        top: -10px;
-        left: -8%;
-        font-size: 40px;
-        font-weight: 700;
-      }
-      &.item-one {
-        &::before {
-          content:'1.';
-        }
-      }
-      &.item-two {
-        &::before {
-          content:'2.';
-        }
-      }
-    }
 	}
   // .thanks__txt
   &__txt {
@@ -2066,6 +2046,9 @@ textarea {
     font-weight: 400;
     line-height: normal;
     margin-bottom: toRem(25);
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30,0,$containerWidth,480);
+    }
     span {
       font-weight: 700;
     }
@@ -2077,31 +2060,14 @@ textarea {
   }
 	// .thanks__button
 	&__button {
-    @media (min-width:$mobile){
-      position: relative;
-      &::after {
-        content:'';
-        position: absolute;
-        top: -80%;
-        right: -4%;
-        background-image: url(../img/icon/arrow-dwn.svg);
-        background-repeat: no-repeat;
-        background-position: right;
-        background-size: contain;
-        display: block;
-        width: 15%;
-        height: 135%;
-      }
+	}
+	// .thanks__link
+	&__link {
+    @media (min-width:$mobileSmall){
+      max-width: toRem(340);
+      margin: 0 auto;
     }
 	}
-  // .thanks__link
-  &__link {
-    font-size: toRem(18);
-    @media (min-width:$mobileSmall){
-       max-width: toRem(340);
-       margin: 0 auto; 
-    }
-  }
 }
 
 

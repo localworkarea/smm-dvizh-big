@@ -1898,10 +1898,6 @@ textarea {
   font-weight: 700;
 }
 
-.thanks__link {
-  font-size: 1.125rem;
-}
-
 .offer__txt {
   line-height: normal;
   font-weight: 400;
@@ -3858,23 +3854,6 @@ textarea {
         -ms-transform: translate(-50%, 50px);
             transform: translate(-50%, 50px);
   }
-
-  .thanks__item::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -8%;
-    font-size: 40px;
-    font-weight: 700;
-  }
-
-  .thanks__item.item-one::before {
-    content: "1.";
-  }
-
-  .thanks__item.item-two::before {
-    content: "2.";
-  }
 }
 
 @media (min-width: 48.06125em) {
@@ -4008,24 +3987,6 @@ textarea {
   .thanks__body {
     max-width: 43.75rem;
     margin: 0 auto;
-  }
-
-  .thanks__button {
-    position: relative;
-  }
-
-  .thanks__button::after {
-    content: "";
-    position: absolute;
-    top: -80%;
-    right: -4%;
-    background-image: url(../img/icon/arrow-dwn.svg);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
-    display: block;
-    width: 15%;
-    height: 135%;
   }
 }
 
@@ -4366,6 +4327,10 @@ textarea {
     font-size: 1.25rem;
   }
 
+  .thanks__txt:not(:last-child) {
+    margin-bottom: 3.125rem;
+  }
+
   .offer {
     padding-top: 9.375rem;
   }
@@ -4665,6 +4630,10 @@ textarea {
 
   .spollers-faq__txt {
     font-size: 1.125rem;
+  }
+
+  .thanks__txt:not(:last-child) {
+    margin-bottom: 1.875rem;
   }
 }
 
@@ -5709,6 +5678,18 @@ textarea {
 @supports not (font-size: clamp( 1.125rem , 1.0282258065rem  +  0.3225806452vw , 1.25rem )) {
     .spollers-faq__txt {
       font-size: calc(1.125rem + 0.125 * (100vw - 30rem) / 38.75);
+    }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 0.9072580645rem  +  3.2258064516vw , 3.125rem )) {
+    .thanks__txt:not(:last-child) {
+      margin-bottom: clamp( 1.875rem , 0.9072580645rem  +  3.2258064516vw , 3.125rem );
+    }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 0.9072580645rem  +  3.2258064516vw , 3.125rem )) {
+    .thanks__txt:not(:last-child) {
+      margin-bottom: calc(1.875rem + 1.25 * (100vw - 30rem) / 38.75);
     }
 }
 }
